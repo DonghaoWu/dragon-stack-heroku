@@ -18,6 +18,4 @@ const dbSetting = process.env.DATABASE_URL ?
 
 const db = new Client(dbSetting);
 
-db.connect();
-
 module.exports = db;

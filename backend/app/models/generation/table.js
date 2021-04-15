@@ -1,5 +1,7 @@
 const db = require('../../../databaseConnection');
 
+db.connect();
+
 class GenerationTable {
     static storeGeneration(generation) {
         return new Promise((resolve, reject) => {
