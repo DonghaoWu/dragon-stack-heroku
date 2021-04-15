@@ -1,0 +1,122 @@
+/* Global setting */
+body {
+  font-size: 20px;
+}
+
+button{
+  font-size: 1.1rem;
+}
+
+/* main content Account & Public Dragons page */
+.account-public-container{
+  width:95%;
+  margin:0.5rem;
+  padding: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.account-public-title{
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.dragon-cards-container{
+  padding: 1rem;
+  
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Dragon Card */
+.dragon-card{
+  background-color:rgb(226, 184, 198);
+  border:1px solid black;
+  margin:1rem 0.5rem;
+  padding: 0.5rem;
+  width:370px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dragon-card-otherOwner{
+  background-color:rgb(147, 197, 186);
+}
+
+.baby-dragon{
+  background-color: rgb(192, 173, 230)
+}
+
+/* Modal */
+.infoModal{
+  z-index: 1; 
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4); 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoModal .closeIcon {
+    padding-right: 5%;
+    font-size: 2rem;
+    font-style: bold;
+    
+    display: flex;
+    justify-content: flex-end;
+}
+
+.infoModal .contentContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sub nav container */
+.sub-nav-container{
+  width:95%;
+  margin:1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid lightgray;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.seletedTag{
+  color: white;
+  text-decoration: none;
+  background-color:#047BFE;
+
+  padding:0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.unSelectedTag{
+  padding:0.5rem 1rem;
+}
+
+.unSelectedTag:hover{
+  color: white;
+  background-color:#047BFE;
+
+  padding:0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+}
+

@@ -1,0 +1,23 @@
+/* ------------------------ */
+.accountInfo-container{
+    font-size: 1.5rem;
+
+    width:40%;
+
+    margin: 5rem 0.5rem 0.5rem 0.5rem;
+    padding: 1.5rem;    
+
+    display:flex;
+    justify-content: space-between;
+}
+
+.accountInfo-description{
+    margin-bottom: 2rem;
+}
+
+.accountInfo-border-right{
+    height:230px;
+
+    margin-left: 5rem;
+    border-right: 2px solid lightgrey;
+}

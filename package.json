@@ -1,0 +1,31 @@
+{
+  "name": "dragon-stack-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix frontend",
+    "server": "npm run configure-dev-local --prefix backend",
+    "configure-db-local": "npm run configure-db-local --prefix backend",
+    "express": "npm run dev --prefix backend",
+    "dev": "concurrently \"npm run express\" \"npm run client\"",
+    "start": "npm start --prefix backend",
+    "heroku-prebuild": "cd backend && npm install",
+    "heroku-postbuild": "cd frontend && npm install && npm run build",
+    "configure-db-heroku": "sh configure_db_heroku.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonghaoWu/dragon-stack-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DonghaoWu/dragon-stack-test/issues"
+  },
+  "homepage": "https://github.com/DonghaoWu/dragon-stack-test#readme",
+  "dependencies": {
+    "concurrently": "^6.0.2"
+  }
+}

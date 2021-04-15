@@ -1,0 +1,17 @@
+/* home-container */
+.home-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.my-content{
+    position: absolute; 
+    top:5rem;
+    left:0.5rem;
+    right:1rem;
+     
+    min-height: 93%;
+    min-width: 1024px;
+
+    display: flex;
+}
