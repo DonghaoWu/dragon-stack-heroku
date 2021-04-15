@@ -1,9 +1,8 @@
-secrets/
-node_modules/
-
 # Dependency directories
 node_modules/
 jspm_packages/
 secrets/
 
-/.env
+# dotenv environment variables file
+.env
+.env.test
