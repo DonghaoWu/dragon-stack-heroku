@@ -1,7 +1,7 @@
 const TRAITS = require("../data/traits.json");
-const client = require("../databaseClient-heroku");
+const db = require("../databaseConnection");
 
-client.connect();
+db.connect();
 
 let curNum = 0;
 
@@ -10,7 +10,7 @@ TRAITS.map(TRAIT => {
     const traitValues = TRAIT.values;
 
     traitValues.map(traitValue => {
-        client.query(
+        db.query(
             `INSERT INTO trait("traitType", "traitValue") VALUES($1, $2) RETURNING id`,
             [traitType, traitValue],
             (error, res) => {
@@ -19,7 +19,7 @@ TRAITS.map(TRAIT => {
                 const traitId = res.rows[0].id;
                 console.log(`Inserted trait - id: ${traitId}`);
                 if(curNum === 16){
-                    client.end();
+                    db.end();
                 }
             }
         )
