@@ -66,7 +66,7 @@ const store = createStore(
 export default store;
 ```
 
-1. Use pool connection.(Can either keep client way).
+2. Use pool connection.(Can either keep client way).
 
 - ./backend/databaseConnection.js
 
@@ -85,7 +85,7 @@ const db = new Pool({
 module.exports = db;
 ```
 
-2. Comment out the `db.connect()` code.(You can keep this if you use client way)
+3. Comment out the `db.connect()` code.(You can keep this if you use client way)
 
 - ./backend/app/models/generation/table.js
 
@@ -113,7 +113,7 @@ class GenerationTable {
 module.exports = GenerationTable;
 ```
 
-3. Check two files:
+4. Check two files:
 
 - ./backend/.env
 
@@ -155,11 +155,12 @@ node ./bin/insertTraits_pool.js
 echo "dragonstackdb configured!"
 ```
 
-4. Start your local postgre server.
+5. Start your local postgre server.
 
-5. Bash commands:
+6. Bash commands:
 
 ```bash
 $ npm run configure-db-local
+
 $ npm run dev
 ```
