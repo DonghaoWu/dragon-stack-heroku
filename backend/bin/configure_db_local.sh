@@ -14,6 +14,6 @@ psql -U noah dragonstackdb < ./bin/sql/trait.sql
 psql -U noah dragonstackdb < ./bin/sql/dragonTrait.sql
 psql -U noah dragonstackdb < ./bin/sql/accountDragon.sql
 
-node ./bin/insertTraits_pool.js
+node ./bin/insertTraits_client.js
 
 echo "dragonstackdb configured!"

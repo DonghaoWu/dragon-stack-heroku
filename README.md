@@ -66,54 +66,7 @@ const store = createStore(
 export default store;
 ```
 
-2. Use pool connection.(Can either keep client way).
-
-- ./backend/databaseConnection.js
-
-```js
-require('dotenv').config();
-const { Pool } = require('pg');
-
-const db = new Pool({
-    user: process.env.POSTGRE_USER,
-    host: process.env.POSTGRE_HOST,
-    database: process.env.POSTGRE_LOCAL_DATABASE,
-    password: process.env.POSTGRE_password,
-    port: process.env.POSTGRE_PORT
-});
-
-module.exports = db;
-```
-
-3. Comment out the `db.connect()` code.(You can keep this if you use client way)
-
-- ./backend/app/models/generation/table.js
-
-```js
-const db = require('../../../databaseConnection');
-
-// db.connect();
-
-class GenerationTable {
-    static storeGeneration(generation) {
-        return new Promise((resolve, reject) => {
-            db.query('INSERT INTO generation(expiration) VALUES($1) RETURNING id',
-                [generation.expiration],
-                (error, response) => {
-                    if (error) return reject(error);
-
-                    const generationId = response.rows[0].id;
-                    resolve({ generationId });
-                }
-            )
-        })
-    };
-}
-
-module.exports = GenerationTable;
-```
-
-4. Check two files:
+2. Check two files:
 
 - ./backend/.env
 
@@ -150,14 +103,14 @@ psql -U noah dragonstackdb < ./bin/sql/trait.sql
 psql -U noah dragonstackdb < ./bin/sql/dragonTrait.sql
 psql -U noah dragonstackdb < ./bin/sql/accountDragon.sql
 
-node ./bin/insertTraits_pool.js
+node ./bin/insertTraits_client.js
 
 echo "dragonstackdb configured!"
 ```
 
-5. Start your local postgre server.
+3. Start your local postgre server.
 
-6. Bash commands:
+4. Bash commands:
 
 ```bash
 $ npm run configure-db-local
