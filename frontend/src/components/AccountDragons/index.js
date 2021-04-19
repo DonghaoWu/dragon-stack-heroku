@@ -29,9 +29,7 @@ class AccountDragons extends Component {
                         {
                             this.props.accountDragons.content.map(dragon => {
                                 return (
-                                    <div key={dragon.dragonId}>
-                                        <AccountDragonRow dragon={dragon} />
-                                    </div>
+                                    <AccountDragonRow key={dragon.dragonId} dragon={dragon} />
                                 )
                             })
                         }
