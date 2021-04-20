@@ -110,6 +110,13 @@ button{
   border-radius: 20px;
 }
 
+.seletedTag:hover{
+  text-decoration: none;
+  color: white;
+
+  background-color: blueviolet;
+}
+
 .unSelectedTag{
   padding:0.5rem 1rem;
 }
