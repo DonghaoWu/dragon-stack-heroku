@@ -12,7 +12,8 @@
     "heroku-prebuild": "cd backend && npm install",
     "heroku-postbuild": "cd frontend && npm install && npm run build",
     "configure-db-heroku": "sh configure_db_heroku.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . --ext .js",
+    "prettier": "prettier --config prettierrc 'src/**/*.js' --write"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,11 @@
   "homepage": "https://github.com/DonghaoWu/dragon-stack-test#readme",
   "dependencies": {
     "concurrently": "^6.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.2.1"
   }
 }
